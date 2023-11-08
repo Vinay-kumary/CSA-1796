@@ -1,0 +1,31 @@
+% Facts representing students, teachers, and subjects
+student(john).
+student(mary).
+student(jane).
+teacher(professor_smith).
+teacher(professor_jones).
+subject(math).
+subject(history).
+subject(chemistry).
+
+% Relationships between students, teachers, and subjects
+teaches(professor_smith, math).
+teaches(professor_jones, history).
+teaches(professor_smith, chemistry).
+enrolled(john, math).
+enrolled(mary, history).
+enrolled(jane, chemistry).
+
+% Rules to determine student-teacher-subject relationships
+teaches_subject(Teacher, Subject) :-
+    teaches(Teacher, Subject).
+
+student_enrolled_in_subject(Student, Subject) :-
+    enrolled(Student, Subject).
+
+% Query examples
+% Find teachers for a specific subject
+% Query: teaches_subject(Teacher, math).
+%
+% Find students enrolled in a specific subject
+% Query: student_enrolled_in_subject(Student, history).
