@@ -1,0 +1,8 @@
+% Facts representing the database
+person(john, date(1990, 5, 15)).
+person(mary, date(1985, 11, 20)).
+person(jane, date(1992, 7, 8)).
+person(bob, date(1978, 3, 12)).
+
+% Query to find the date of birth for a given person
+find_dob(Name, DOB) :- person(Name, DOB).
